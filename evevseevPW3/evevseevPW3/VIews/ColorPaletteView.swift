@@ -45,7 +45,6 @@ final class ColorPaletteView: UIControl {
 
     @objc
     private func sliderMoved(slider: ColorSliderView) {
-        print("it'smoved")
         switch slider.tag {
         case 0:
             chosenColor = UIColor(
