@@ -101,7 +101,7 @@ extension ColorPaletteView {
             addSubview(stackView)
             stackView.pin(to: self, [.left: 12, .top: 12, .right: 12, .bottom: 12])
             colorLabel.textColor = .secondaryLabel;
-            slider.addTarget(self, action: #selector(sliderMoved), for: .valueChanged)
+            slider.addTarget(self, action: #selector(sliderMoved), for: .touchDragInside)
         }
 
         @objc
