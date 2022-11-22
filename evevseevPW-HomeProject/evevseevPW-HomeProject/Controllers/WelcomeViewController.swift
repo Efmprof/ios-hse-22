@@ -37,7 +37,7 @@ final class WelcomeViewController: UIViewController {
     }
 
     private func setupIncrementButton() {
-        incrementButton.setTitle("Prese Me", for: .normal)
+        incrementButton.setTitle("Tap Me", for: .normal)
         incrementButton.setTitleColor(.secondaryLabel, for: .normal)
         incrementButton.layer.cornerRadius = 12
         incrementButton.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
