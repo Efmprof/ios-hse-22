@@ -1,12 +1,11 @@
 import UIKit
 
 final class WelcomeViewController: UIViewController {
-
     private let commentLabel = UILabel()
     private let valueLabel = UILabel()
     private let incrementButton = UIButton()
     private let commentView = UIView()
-    private var buttonsSV = UIStackView()
+    private let buttonsSV = UIStackView()
     private let colorPaletteView = ColorPaletteView()
 
     private var value: Int = 0;
@@ -36,6 +35,61 @@ final class WelcomeViewController: UIViewController {
         valueLabel.text = "\(self.value)"
     }
 
+    func updateCommentLabel(value: Int) {
+        switch value {
+        case 2...3:
+            commentLabel.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        case 0...40:
+            commentLabel.text = "\(value / 10 + 1)"
+        case 40...50:
+            commentLabel.text = "!1!1!1!1!"
+        case 50...60:
+            commentLabel.text = "big dude"
+        case 60...70:
+            commentLabel.text = "yyyuuuuuhaaaaa"
+        case 70...80:
+            commentLabel.text = "⭐ ⭐ ⭐ ⭐ ⭐ ⭐ ⭐ ⭐ ⭐ "
+        case 80...90:
+            commentLabel.text = "80+"
+        case 90...100:
+            commentLabel.text = "1.0.0"
+        default:
+            break
+        }
+    }
+
+    // Event handlers
+    @objc
+    private func incrementButtonPressed() {
+        value += 1
+
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        generator.impactOccurred()
+
+        updateUI(animate: true)
+    }
+
+    @objc
+    private func incrementButtonReleased() {
+        let generator = UIImpactFeedbackGenerator(style: .light)
+        generator.impactOccurred()
+    }
+
+    @objc
+    private func paletteButtonPressed() {
+        colorPaletteView.isHidden.toggle()
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        generator.impactOccurred()
+    }
+
+    @objc
+    private func changeColor(_ slider: ColorPaletteView) {
+        UIView.animate(withDuration: 0.5) {
+            self.view.backgroundColor = slider.chosenColor
+        }
+    }
+
+    // Interface setup
     private func setupIncrementButton() {
         incrementButton.setTitle("Tap Me", for: .normal)
         incrementButton.setTitleColor(.secondaryLabel, for: .normal)
@@ -101,9 +155,9 @@ final class WelcomeViewController: UIViewController {
         let notesButton = makeMenuButton(title: "📝")
         let newsButton = makeMenuButton(title: "📰")
 
-        buttonsSV = UIStackView(
-                arrangedSubviews: [colorsButton, notesButton, newsButton]
-        )
+        for view in [colorsButton, notesButton, newsButton] {
+            buttonsSV.addArrangedSubview(view)
+        }
 
         buttonsSV.spacing = 12
         buttonsSV.axis = .horizontal
@@ -135,59 +189,5 @@ final class WelcomeViewController: UIViewController {
         setupCommentView()
         setupMenuButtons()
         setupColorControlSV()
-    }
-
-    func updateCommentLabel(value: Int) {
-        switch value {
-        case 2...3:
-            commentLabel.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        case 0...40:
-            commentLabel.text = "\(value / 10 + 1)"
-        case 40...50:
-            commentLabel.text = "!1!1!1!1!"
-        case 50...60:
-            commentLabel.text = "big dude"
-        case 60...70:
-            commentLabel.text = "yyyuuuuuhaaaaa"
-        case 70...80:
-            commentLabel.text = "⭐ ⭐ ⭐ ⭐ ⭐ ⭐ ⭐ ⭐ ⭐ "
-        case 80...90:
-            commentLabel.text = "80+"
-        case 90...100:
-            commentLabel.text = "1.0.0"
-        default:
-            break
-        }
-    }
-
-    @objc
-    private func incrementButtonPressed() {
-        value += 1
-
-        let generator = UIImpactFeedbackGenerator(style: .medium)
-        generator.impactOccurred()
-
-        updateUI(animate: true)
-    }
-
-    @objc
-    private func incrementButtonReleased() {
-        let generator = UIImpactFeedbackGenerator(style: .light)
-        generator.impactOccurred()
-    }
-
-    @objc
-    private func paletteButtonPressed() {
-        colorPaletteView.isHidden.toggle()
-        print(colorPaletteView.isHidden)
-        let generator = UIImpactFeedbackGenerator(style: .medium)
-        generator.impactOccurred()
-    }
-
-    @objc
-    private func changeColor(_ slider: ColorPaletteView) {
-        UIView.animate(withDuration: 0.5) {
-            self.view.backgroundColor = slider.chosenColor
-        }
     }
 }
