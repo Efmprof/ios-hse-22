@@ -83,6 +83,21 @@ final class WelcomeViewController: UIViewController {
     }
 
     @objc
+    private func notesButtonPressed() {
+        let notesView = NotesViewController()
+        let navController = UINavigationController(rootViewController: notesView)
+        if let sheet = navController.sheetPresentationController {
+            sheet.detents = [.large()]
+            sheet.largestUndimmedDetentIdentifier = nil
+            sheet.prefersGrabberVisible = true
+            sheet.prefersScrollingExpandsWhenScrolledToEdge = true
+            sheet.prefersEdgeAttachedInCompactHeight = true
+            sheet.widthFollowsPreferredContentSizeWhenEdgeAttached = true
+        }
+        self.present(navController, animated: true, completion: nil)
+    }
+
+    @objc
     private func changeColor(_ slider: ColorPaletteView) {
         UIView.animate(withDuration: 0.5) {
             self.view.backgroundColor = slider.chosenColor
@@ -168,6 +183,7 @@ final class WelcomeViewController: UIViewController {
         buttonsSV.pinBottom(to: self.view.safeAreaLayoutGuide.bottomAnchor, 24)
 
         colorsButton.addTarget(self, action: #selector(paletteButtonPressed), for: .touchUpInside)
+        notesButton.addTarget(self, action: #selector(notesButtonPressed), for: .touchUpInside)
     }
 
     private func setupColorControlSV() {
