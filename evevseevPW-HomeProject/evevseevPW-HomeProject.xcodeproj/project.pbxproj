@@ -15,10 +15,12 @@
 		5FCDAFE728E749D600A94C9A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCDAFE628E749D600A94C9A /* WelcomeViewController.swift */; };
 		5FCDAFED28E78E7900A94C9A /* CALayer+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCDAFEC28E78E7900A94C9A /* CALayer+Shadow.swift */; };
 		5FCDAFEF28E78E8400A94C9A /* UIView+Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCDAFEE28E78E8400A94C9A /* UIView+Pin.swift */; };
+		931851CB404C2FA775CE6453 /* NotesDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931859F71EBB76B33E056673 /* NotesDataBase.swift */; };
 		9318531B58846CDD197F1900 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9318590E2A1E8A35A34BA092 /* NotesViewController.swift */; };
 		931855E63E36587CDFDCF14B /* AddNoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93185C3083B4ED35B9F911EB /* AddNoteCell.swift */; };
 		9318573EAAC481CA064403EE /* ColorPaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931857C71036E6865D23ABDE /* ColorPaletteView.swift */; };
 		93185754B0EBBDE26F819EEF /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93185BF4FBB76EB0E45FE08F /* NoteCell.swift */; };
+		93185B29EEF92AF80B3CB313 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9318588E2BD21E0C130A367F /* UserDefaultsStorage.swift */; };
 		93185D1C50D6B56DEF3B0A45 /* ShortNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9318559539EFC9330EDCD0E7 /* ShortNote.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,7 +37,9 @@
 		5FCDAFEE28E78E8400A94C9A /* UIView+Pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Pin.swift"; sourceTree = "<group>"; };
 		9318559539EFC9330EDCD0E7 /* ShortNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShortNote.swift; path = Models/ShortNote.swift; sourceTree = "<group>"; };
 		931857C71036E6865D23ABDE /* ColorPaletteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPaletteView.swift; sourceTree = "<group>"; };
+		9318588E2BD21E0C130A367F /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDefaultsStorage.swift; path = Utils/UserDefaultsStorage.swift; sourceTree = "<group>"; };
 		9318590E2A1E8A35A34BA092 /* NotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
+		931859F71EBB76B33E056673 /* NotesDataBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotesDataBase.swift; path = Utils/NotesDataBase.swift; sourceTree = "<group>"; };
 		93185BF4FBB76EB0E45FE08F /* NoteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
 		93185C3083B4ED35B9F911EB /* AddNoteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNoteCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,6 +82,8 @@
 				5FCDAFDD28E748DB00A94C9A /* LaunchScreen.storyboard */,
 				5FCDAFE028E748DB00A94C9A /* Info.plist */,
 				9318559539EFC9330EDCD0E7 /* ShortNote.swift */,
+				931859F71EBB76B33E056673 /* NotesDataBase.swift */,
+				9318588E2BD21E0C130A367F /* UserDefaultsStorage.swift */,
 			);
 			path = "evevseevPW-HomeProject";
 			sourceTree = "<group>";
@@ -193,6 +199,8 @@
 				93185D1C50D6B56DEF3B0A45 /* ShortNote.swift in Sources */,
 				93185754B0EBBDE26F819EEF /* NoteCell.swift in Sources */,
 				931855E63E36587CDFDCF14B /* AddNoteCell.swift in Sources */,
+				931851CB404C2FA775CE6453 /* NotesDataBase.swift in Sources */,
+				93185B29EEF92AF80B3CB313 /* UserDefaultsStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

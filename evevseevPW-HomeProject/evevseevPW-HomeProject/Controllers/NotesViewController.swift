@@ -2,7 +2,9 @@ import UIKit
 
 class NotesViewController: UIViewController {
     private let tableView = UITableView(frame: .zero, style: .insetGrouped)
-    private var dataSource = [ShortNote]()
+
+    // TODO: Make proper error handling
+    private var dataSource = try! UserDefaultsStorage.getNotes()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,7 +19,7 @@ class NotesViewController: UIViewController {
     }
 
     private func setupView() {
-        dataSource = [ShortNote(text: "test"), ShortNote(text: "test2")]
+        // dataSource = [ShortNote(text: "test"), ShortNote(text: "test2")]
         setupNavBar()
         setupTableView()
     }
@@ -51,6 +53,9 @@ class NotesViewController: UIViewController {
     private func handleDelete(indexPath: IndexPath) {
         dataSource.remove(at: indexPath.row)
         tableView.reloadData()
+
+        // TODO: Make proper error handling
+        try! UserDefaultsStorage.saveNotes(dataSource)
     }
 }
 
@@ -112,5 +117,8 @@ extension NotesViewController: AddNoteDelegate {
     func newNoteAdded(note: ShortNote) {
         dataSource.insert(note, at: 0)
         tableView.reloadData()
+
+        // TODO: Make proper error handling
+        try! UserDefaultsStorage.saveNotes(dataSource)
     }
 }
