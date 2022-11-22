@@ -8,9 +8,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5FCDAFCE28E748DA00A94C9A"
-               BuildableName = "evevseevPW3.app"
-               BlueprintName = "evevseevPW3"
-               ReferencedContainer = "container:evevseevPW3.xcodeproj">
+               BuildableName = "evevseevPW-HomeProject.app"
+               BlueprintName = "evevseevPW-HomeProject"
+               ReferencedContainer = "container:evevseevPW-HomeProject.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -23,9 +23,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5FCDAFCE28E748DA00A94C9A"
-            BuildableName = "evevseevPW3.app"
-            BlueprintName = "evevseevPW3"
-            ReferencedContainer = "container:evevseevPW3.xcodeproj">
+            BuildableName = "evevseevPW-HomeProject.app"
+            BlueprintName = "evevseevPW-HomeProject"
+            ReferencedContainer = "container:evevseevPW-HomeProject.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
