@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F53D56D291063F100652316 /* UIColor+Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F53D56C291063F100652316 /* UIColor+Component.swift */; };
 		5FCDAFD328E748DA00A94C9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCDAFD228E748DA00A94C9A /* AppDelegate.swift */; };
 		5FCDAFD528E748DA00A94C9A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCDAFD428E748DA00A94C9A /* SceneDelegate.swift */; };
 		5FCDAFDC28E748DB00A94C9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FCDAFDB28E748DB00A94C9A /* Assets.xcassets */; };
@@ -14,10 +15,12 @@
 		5FCDAFE728E749D600A94C9A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCDAFE628E749D600A94C9A /* WelcomeViewController.swift */; };
 		5FCDAFED28E78E7900A94C9A /* CALayer+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCDAFEC28E78E7900A94C9A /* CALayer+Shadow.swift */; };
 		5FCDAFEF28E78E8400A94C9A /* UIView+Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCDAFEE28E78E8400A94C9A /* UIView+Pin.swift */; };
+		9318573EAAC481CA064403EE /* ColorPaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931857C71036E6865D23ABDE /* ColorPaletteView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5FCDAFCF28E748DA00A94C9A /* evevseevPW2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = evevseevPW2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F53D56C291063F100652316 /* UIColor+Component.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Component.swift"; sourceTree = "<group>"; };
+		5FCDAFCF28E748DA00A94C9A /* evevseevPW-HomeProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = evevseevPW-HomeProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FCDAFD228E748DA00A94C9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FCDAFD428E748DA00A94C9A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5FCDAFDB28E748DB00A94C9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -26,6 +29,7 @@
 		5FCDAFE628E749D600A94C9A /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		5FCDAFEC28E78E7900A94C9A /* CALayer+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Shadow.swift"; sourceTree = "<group>"; };
 		5FCDAFEE28E78E8400A94C9A /* UIView+Pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Pin.swift"; sourceTree = "<group>"; };
+		931857C71036E6865D23ABDE /* ColorPaletteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPaletteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +46,7 @@
 		5FCDAFC628E748DA00A94C9A = {
 			isa = PBXGroup;
 			children = (
-				5FCDAFD128E748DA00A94C9A /* evevseevPW2 */,
+				5FCDAFD128E748DA00A94C9A /* evevseevPW-HomeProject */,
 				5FCDAFD028E748DA00A94C9A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,12 +54,12 @@
 		5FCDAFD028E748DA00A94C9A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5FCDAFCF28E748DA00A94C9A /* evevseevPW2.app */,
+				5FCDAFCF28E748DA00A94C9A /* evevseevPW-HomeProject.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5FCDAFD128E748DA00A94C9A /* evevseevPW2 */ = {
+		5FCDAFD128E748DA00A94C9A /* evevseevPW-HomeProject */ = {
 			isa = PBXGroup;
 			children = (
 				5FCDAFF728E797A300A94C9A /* Controllers */,
@@ -66,13 +70,14 @@
 				5FCDAFDD28E748DB00A94C9A /* LaunchScreen.storyboard */,
 				5FCDAFE028E748DB00A94C9A /* Info.plist */,
 			);
-			path = evevseevPW2;
+			path = evevseevPW-HomeProject;
 			sourceTree = "<group>";
 		};
 		5FCDAFEA28E78E5C00A94C9A /* VIews */ = {
 			isa = PBXGroup;
 			children = (
 				5FCDAFEB28E78E6600A94C9A /* Extensions */,
+				931857C71036E6865D23ABDE /* ColorPaletteView.swift */,
 			);
 			path = VIews;
 			sourceTree = "<group>";
@@ -82,6 +87,7 @@
 			children = (
 				5FCDAFEE28E78E8400A94C9A /* UIView+Pin.swift */,
 				5FCDAFEC28E78E7900A94C9A /* CALayer+Shadow.swift */,
+				5F53D56C291063F100652316 /* UIColor+Component.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -97,9 +103,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5FCDAFCE28E748DA00A94C9A /* evevseevPW2 */ = {
+		5FCDAFCE28E748DA00A94C9A /* evevseevPW-HomeProject */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5FCDAFE328E748DB00A94C9A /* Build configuration list for PBXNativeTarget "evevseevPW2" */;
+			buildConfigurationList = 5FCDAFE328E748DB00A94C9A /* Build configuration list for PBXNativeTarget "evevseevPW-HomeProject" */;
 			buildPhases = (
 				5FCDAFCB28E748DA00A94C9A /* Sources */,
 				5FCDAFCC28E748DA00A94C9A /* Frameworks */,
@@ -109,9 +115,9 @@
 			);
 			dependencies = (
 			);
-			name = evevseevPW2;
-			productName = evevseevPW2;
-			productReference = 5FCDAFCF28E748DA00A94C9A /* evevseevPW2.app */;
+			name = evevseevPW-HomeProject;
+			productName = evevseevPW-HomeProject;
+			productReference = 5FCDAFCF28E748DA00A94C9A /* evevseevPW-HomeProject.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -129,7 +135,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5FCDAFCA28E748DA00A94C9A /* Build configuration list for PBXProject "evevseevPW2" */;
+			buildConfigurationList = 5FCDAFCA28E748DA00A94C9A /* Build configuration list for PBXProject "evevseevPW-HomeProject" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -142,7 +148,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5FCDAFCE28E748DA00A94C9A /* evevseevPW2 */,
+				5FCDAFCE28E748DA00A94C9A /* evevseevPW-HomeProject */,
 			);
 		};
 /* End PBXProject section */
@@ -168,7 +174,9 @@
 				5FCDAFD328E748DA00A94C9A /* AppDelegate.swift in Sources */,
 				5FCDAFD528E748DA00A94C9A /* SceneDelegate.swift in Sources */,
 				5FCDAFEF28E78E8400A94C9A /* UIView+Pin.swift in Sources */,
+				5F53D56D291063F100652316 /* UIColor+Component.swift in Sources */,
 				5FCDAFED28E78E7900A94C9A /* CALayer+Shadow.swift in Sources */,
+				9318573EAAC481CA064403EE /* ColorPaletteView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,7 +319,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = J2QFHZ47MQ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = evevseevPW2/Info.plist;
+				INFOPLIST_FILE = evevseevPW-HomeProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -323,7 +331,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = emg.evevseevPW2;
+				PRODUCT_BUNDLE_IDENTIFIER = emg.evevseevPW-HomeProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -340,7 +348,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = J2QFHZ47MQ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = evevseevPW2/Info.plist;
+				INFOPLIST_FILE = evevseevPW-HomeProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -352,7 +360,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = emg.evevseevPW2;
+				PRODUCT_BUNDLE_IDENTIFIER = emg.evevseevPW-HomeProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -363,7 +371,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5FCDAFCA28E748DA00A94C9A /* Build configuration list for PBXProject "evevseevPW2" */ = {
+		5FCDAFCA28E748DA00A94C9A /* Build configuration list for PBXProject "evevseevPW-HomeProject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5FCDAFE128E748DB00A94C9A /* Debug */,
@@ -372,7 +380,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5FCDAFE328E748DB00A94C9A /* Build configuration list for PBXNativeTarget "evevseevPW2" */ = {
+		5FCDAFE328E748DB00A94C9A /* Build configuration list for PBXNativeTarget "evevseevPW-HomeProject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5FCDAFE428E748DB00A94C9A /* Debug */,
