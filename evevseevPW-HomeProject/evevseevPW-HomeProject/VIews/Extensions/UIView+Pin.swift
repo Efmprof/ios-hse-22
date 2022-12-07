@@ -4,8 +4,8 @@ extension UIView {
     enum PinSide {
         case top, bottom, left, right
     }
-    
-    func pin(to superview: UIView, _ sides: [PinSide:Int]){
+
+    func pin(to superview: UIView, _ sides: [PinSide: Int]) {
         for (side, offset) in sides {
             switch side {
             case .top:
@@ -19,14 +19,14 @@ extension UIView {
             }
         }
     }
-    
+
     func pin(to superview: UIView, _ const: Int = 0) {
         pinLeft(to: superview, const)
         pinRight(to: superview, const)
         pinTop(to: superview, const)
         pinBottom(to: superview, const)
     }
-    
+
     @discardableResult
     func pinLeft(to superview: UIView, _ const: Int = 0) -> NSLayoutConstraint {
         translatesAutoresizingMaskIntoConstraints = false;
@@ -34,15 +34,15 @@ extension UIView {
         constraint.isActive = true;
         return constraint;
     }
-    
+
     @discardableResult
     func pinLeft(to side: NSLayoutXAxisAnchor, _ const: Int = 0) -> NSLayoutConstraint {
         translatesAutoresizingMaskIntoConstraints = false;
-        let constraint =  leadingAnchor.constraint(equalTo: side, constant: CGFloat(const))
+        let constraint = leadingAnchor.constraint(equalTo: side, constant: CGFloat(const))
         constraint.isActive = true;
         return constraint;
     }
-    
+
     @discardableResult
     func pinRight(to superview: UIView, _ const: Int = 0) -> NSLayoutConstraint {
         translatesAutoresizingMaskIntoConstraints = false;
@@ -50,15 +50,15 @@ extension UIView {
         constraint.isActive = true;
         return constraint;
     }
-    
+
     @discardableResult
     func pinRight(to side: NSLayoutXAxisAnchor, _ const: Int = 0) -> NSLayoutConstraint {
         translatesAutoresizingMaskIntoConstraints = false;
-        let constraint =  trailingAnchor.constraint(equalTo: side, constant: CGFloat(const * -1))
+        let constraint = trailingAnchor.constraint(equalTo: side, constant: CGFloat(const * -1))
         constraint.isActive = true;
         return constraint;
     }
-    
+
     @discardableResult
     func pinTop(to superview: UIView, _ const: Int = 0) -> NSLayoutConstraint {
         translatesAutoresizingMaskIntoConstraints = false;
@@ -66,15 +66,15 @@ extension UIView {
         constraint.isActive = true;
         return constraint;
     }
-    
+
     @discardableResult
     func pinTop(to side: NSLayoutYAxisAnchor, _ const: Int = 0) -> NSLayoutConstraint {
         translatesAutoresizingMaskIntoConstraints = false;
-        let constraint =  topAnchor.constraint(equalTo: side, constant: CGFloat(const))
+        let constraint = topAnchor.constraint(equalTo: side, constant: CGFloat(const))
         constraint.isActive = true;
         return constraint;
     }
-    
+
     @discardableResult
     func pinBottom(to superview: UIView, _ const: Int = 0) -> NSLayoutConstraint {
         translatesAutoresizingMaskIntoConstraints = false;
@@ -82,15 +82,15 @@ extension UIView {
         constraint.isActive = true;
         return constraint;
     }
-    
+
     @discardableResult
     func pinBottom(to side: NSLayoutYAxisAnchor, _ const: Int = 0) -> NSLayoutConstraint {
         translatesAutoresizingMaskIntoConstraints = false;
-        let constraint =  bottomAnchor.constraint(equalTo: side, constant: CGFloat(const * -1))
+        let constraint = bottomAnchor.constraint(equalTo: side, constant: CGFloat(const * -1))
         constraint.isActive = true;
         return constraint;
     }
-    
+
     @discardableResult
     func pinCenterX(to superview: UIView, _ const: Int = 0) -> NSLayoutConstraint {
         translatesAutoresizingMaskIntoConstraints = false;
@@ -98,15 +98,15 @@ extension UIView {
         constraint.isActive = true;
         return constraint;
     }
-    
+
     @discardableResult
     func pinCenterX(to center: NSLayoutXAxisAnchor, _ const: Int = 0) -> NSLayoutConstraint {
         translatesAutoresizingMaskIntoConstraints = false;
-        let constraint =  centerXAnchor.constraint(equalTo: center, constant: CGFloat(const))
+        let constraint = centerXAnchor.constraint(equalTo: center, constant: CGFloat(const))
         constraint.isActive = true;
         return constraint;
     }
-    
+
     @discardableResult
     func pinCenterY(to superview: UIView, _ const: Int = 0) -> NSLayoutConstraint {
         translatesAutoresizingMaskIntoConstraints = false;
@@ -114,20 +114,20 @@ extension UIView {
         constraint.isActive = true;
         return constraint;
     }
-    
+
     @discardableResult
     func pinCenterY(to center: NSLayoutYAxisAnchor, _ const: Int = 0) -> NSLayoutConstraint {
         translatesAutoresizingMaskIntoConstraints = false;
-        let constraint =  centerYAnchor.constraint(equalTo: center, constant: CGFloat(const))
+        let constraint = centerYAnchor.constraint(equalTo: center, constant: CGFloat(const))
         constraint.isActive = true;
         return constraint;
     }
-    
+
     func pinCenter(to superview: UIView, _ const: Int = 0) {
         pinCenterX(to: superview)
         pinCenterY(to: superview)
     }
-    
+
     @discardableResult
     func pinWidth(to superview: UIView, _ mult: CGFloat = 1) -> NSLayoutConstraint {
         translatesAutoresizingMaskIntoConstraints = false;
@@ -135,15 +135,15 @@ extension UIView {
         constraint.isActive = true;
         return constraint;
     }
-    
+
     @discardableResult
     func pinWidth(to size: NSLayoutDimension, _ mult: CGFloat = 1) -> NSLayoutConstraint {
         translatesAutoresizingMaskIntoConstraints = false;
-        let constraint =  widthAnchor.constraint(equalTo: size, constant: mult)
+        let constraint = widthAnchor.constraint(equalTo: size, constant: mult)
         constraint.isActive = true;
         return constraint;
     }
-    
+
     @discardableResult
     func pinHeight(to superview: UIView, _ mult: CGFloat = 1) -> NSLayoutConstraint {
         translatesAutoresizingMaskIntoConstraints = false;
@@ -151,22 +151,22 @@ extension UIView {
         constraint.isActive = true;
         return constraint;
     }
-    
+
     @discardableResult
     func pinHeight(to size: NSLayoutDimension, _ mult: CGFloat = 1) -> NSLayoutConstraint {
         translatesAutoresizingMaskIntoConstraints = false;
-        let constraint =  heightAnchor.constraint(equalTo: size, constant: mult)
+        let constraint = heightAnchor.constraint(equalTo: size, constant: mult)
         constraint.isActive = true;
         return constraint;
     }
-    
+
     @discardableResult
     func setWidth(_ const: Int) -> NSLayoutConstraint {
         let constraint = widthAnchor.constraint(equalToConstant: CGFloat(const))
         constraint.isActive = true;
         return constraint;
     }
-    
+
     @discardableResult
     func setHeight(_ const: Int) -> NSLayoutConstraint {
         let constraint = heightAnchor.constraint(equalToConstant: CGFloat(const))

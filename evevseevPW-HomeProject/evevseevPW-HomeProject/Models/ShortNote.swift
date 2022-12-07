@@ -1,5 +1,5 @@
 import Foundation
 
-struct ShortNote : Codable {
+struct ShortNote: Codable {
     var text: String
 }
