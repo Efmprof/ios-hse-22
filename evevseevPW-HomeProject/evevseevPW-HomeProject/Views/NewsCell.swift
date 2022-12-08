@@ -26,6 +26,7 @@ class NewsCell: UITableViewCell {
     func configure(_ news: ArticleViewModel) {
         titleLabel.text = news.title
         descriptionLabel.text = news.description
+        newsImageView.image = nil
 
         // TODO: get rid of redundant code here and in NewsController
         if let data = news.imageData {

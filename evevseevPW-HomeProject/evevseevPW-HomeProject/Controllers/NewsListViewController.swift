@@ -1,6 +1,5 @@
 import UIKit
 
-// TODO: remove image flickering on update
 class NewsListViewController: UIViewController {
     // TODO: implement loading state
     private let tableView = UITableView(frame: .zero, style: .plain)
