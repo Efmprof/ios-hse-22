@@ -1,7 +1,7 @@
 # iOS Homework Project
-## Current version: HW-4
+## Current version: HW-5
 
 ## Important!
 Since version HW-4, all future home assignments will be published as separate branches.
 
-You can download only this sub-folder [here](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/Efmprof/ios-hse-22/tree/hw-4/evevseevPW-HomeProject)
+You can download only this sub-folder [here](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/Efmprof/ios-hse-22/tree/main/evevseevPW-HomeProject)
