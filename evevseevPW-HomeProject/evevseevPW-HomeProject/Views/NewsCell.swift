@@ -67,7 +67,6 @@ class NewsCell: UITableViewCell {
     }
 
     private func setupTitleLabel() {
-        titleLabel.backgroundColor = .red
         titleLabel.font = .systemFont(ofSize: 16, weight: .medium)
         titleLabel.textColor = .label
         titleLabel.numberOfLines = 1
@@ -82,7 +81,6 @@ class NewsCell: UITableViewCell {
 
     private func setupDescriptionLabel() {
         // TODO: pin text to top edge of view
-        descriptionLabel.backgroundColor = .green
         descriptionLabel.font = .systemFont(ofSize: 14, weight: .regular)
         descriptionLabel.textColor = .secondaryLabel
         descriptionLabel.numberOfLines = 0
