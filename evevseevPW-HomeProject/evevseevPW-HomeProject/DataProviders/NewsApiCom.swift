@@ -1,10 +1,12 @@
 import Foundation
 
-protocol NewsRepository {
+// TODO: move to separate file
+protocol NewsProvider {
     func getTopHeadlines(onCompletion: @escaping (Result<[ArticleViewModel], Error>) -> Void) -> Void
 }
 
-class APINewsProvider: NewsRepository {
+class NewsApiCom: NewsProvider {
+    // TODO: Dependency injection?
     private let client: HTTPClient = BasicHTTPClient()
 
     func getTopHeadlines(onCompletion: @escaping (Result<[ArticleViewModel], Error>) -> Void) {

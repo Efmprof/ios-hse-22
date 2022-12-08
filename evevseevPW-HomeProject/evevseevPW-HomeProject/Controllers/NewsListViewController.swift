@@ -11,7 +11,7 @@ class NewsListViewController: UIViewController {
     }
 
     private func getNews() {
-        APINewsProvider().getTopHeadlines { [weak self] result in
+        NewsApiCom().getTopHeadlines { [weak self] result in
             switch result {
             case .success(let articles):
                 self?.newsList = articles
