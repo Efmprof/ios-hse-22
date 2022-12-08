@@ -4,7 +4,7 @@ class NotesViewController: UIViewController {
     private let tableView = UITableView(frame: .zero, style: .insetGrouped)
 
     // TODO: Make proper error handling
-    private var dataSource = try! UserDefaultsStorage.getNotes()
+    private var notesList = try! UserDefaultsStorage.getNotes()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +19,6 @@ class NotesViewController: UIViewController {
     }
 
     private func setupView() {
-        // dataSource = [ShortNote(text: "test"), ShortNote(text: "test2")]
         setupNavBar()
         setupTableView()
     }
@@ -30,11 +29,6 @@ class NotesViewController: UIViewController {
         let closeButton = UIButton(type: .close)
         closeButton.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: closeButton)
-    }
-
-    @objc
-    private func dismissView() {
-        self.dismiss(animated: true)
     }
 
     private func setupTableView() {
@@ -51,11 +45,16 @@ class NotesViewController: UIViewController {
     }
 
     private func handleDelete(indexPath: IndexPath) {
-        dataSource.remove(at: indexPath.row)
+        notesList.remove(at: indexPath.row)
         tableView.reloadData()
 
         // TODO: Make proper error handling
-        try! UserDefaultsStorage.saveNotes(dataSource)
+        try! UserDefaultsStorage.saveNotes(notesList)
+    }
+
+    @objc
+    private func dismissView() {
+        self.dismiss(animated: true)
     }
 }
 
@@ -69,7 +68,7 @@ extension NotesViewController: UITableViewDataSource {
         case 0:
             return 1
         default:
-            return dataSource.count
+            return notesList.count
         }
     }
 
@@ -81,7 +80,7 @@ extension NotesViewController: UITableViewDataSource {
                 return addNewCell
             }
         default:
-            let note = dataSource[indexPath.row]
+            let note = notesList[indexPath.row]
             if let noteCell = tableView.dequeueReusableCell(withIdentifier: NoteCell.reuseIdentifier, for: indexPath) as? NoteCell {
                 noteCell.configure(note)
                 return noteCell;
@@ -115,10 +114,10 @@ extension NotesViewController: UITableViewDelegate {
 
 extension NotesViewController: AddNoteDelegate {
     func newNoteAdded(note: ShortNote) {
-        dataSource.insert(note, at: 0)
+        notesList.insert(note, at: 0)
         tableView.reloadData()
 
         // TODO: Make proper error handling
-        try! UserDefaultsStorage.saveNotes(dataSource)
+        try! UserDefaultsStorage.saveNotes(notesList)
     }
 }

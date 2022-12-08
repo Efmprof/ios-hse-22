@@ -1,5 +1,5 @@
 # iOS Homework Project
-## Current version: HW-4
+## Current version: HW-5
 
 ## Important!
 Since version HW-4, all future home assignments will be published as separate branches.

@@ -6,7 +6,6 @@ final class ColorPaletteView: UIControl {
 
     init() {
         super.init(frame: .zero)
-
         setupView()
     }
 

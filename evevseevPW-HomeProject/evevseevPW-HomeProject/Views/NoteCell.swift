@@ -8,7 +8,7 @@ final class NoteCell: UITableViewCell {
     override init(style: CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-        self.selectionStyle = .none
+        selectionStyle = .none
         setupView()
     }
 

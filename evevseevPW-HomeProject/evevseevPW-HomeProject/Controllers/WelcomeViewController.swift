@@ -37,8 +37,6 @@ final class WelcomeViewController: UIViewController {
 
     func updateCommentLabel(value: Int) {
         switch value {
-        case 2...3:
-            commentLabel.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
         case 0...40:
             commentLabel.text = "\(value / 10 + 1)"
         case 40...50:
@@ -58,7 +56,8 @@ final class WelcomeViewController: UIViewController {
         }
     }
 
-    // Event handlers
+    // MARK: - Event handlers
+
     @objc
     private func incrementButtonPressed() {
         value += 1
@@ -98,13 +97,29 @@ final class WelcomeViewController: UIViewController {
     }
 
     @objc
+    private func newsButtonPressed() {
+        let newsListController = NewsListViewController()
+        navigationController?.pushViewController(newsListController, animated: true)
+    }
+
+    @objc
     private func changeColor(_ slider: ColorPaletteView) {
         UIView.animate(withDuration: 0.5) {
             self.view.backgroundColor = slider.chosenColor
         }
     }
 
-    // Interface setup
+    // MARK: - Interface setup
+
+    private func setupView() {
+        view.backgroundColor = UIColor(named: "Background")
+        setupIncrementButton()
+        setupValueLabel()
+        setupCommentView()
+        setupMenuButtons()
+        setupColorControlSV()
+    }
+
     private func setupIncrementButton() {
         incrementButton.setTitle("Tap Me", for: .normal)
         incrementButton.setTitleColor(.secondaryLabel, for: .normal)
@@ -184,6 +199,7 @@ final class WelcomeViewController: UIViewController {
 
         colorsButton.addTarget(self, action: #selector(paletteButtonPressed), for: .touchUpInside)
         notesButton.addTarget(self, action: #selector(notesButtonPressed), for: .touchUpInside)
+        newsButton.addTarget(self, action: #selector(newsButtonPressed), for: .touchUpInside)
     }
 
     private func setupColorControlSV() {
@@ -196,14 +212,5 @@ final class WelcomeViewController: UIViewController {
         colorPaletteView.pinBottom(to: buttonsSV.topAnchor, 8)
 
         colorPaletteView.addTarget(self, action: #selector(changeColor), for: .touchDragInside)
-    }
-
-    private func setupView() {
-        view.backgroundColor = UIColor(named: "Background")
-        setupIncrementButton()
-        setupValueLabel()
-        setupCommentView()
-        setupMenuButtons()
-        setupColorControlSV()
     }
 }

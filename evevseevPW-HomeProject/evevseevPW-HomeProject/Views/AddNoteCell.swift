@@ -9,7 +9,7 @@ class AddNoteCell: UITableViewCell {
 
     private let textView = UITextView()
     private let stackView = UIStackView()
-    public let addButton = UIButton()
+    private let addButton = UIButton()
 
     public var delegate: AddNoteDelegate? = nil
 
@@ -34,7 +34,6 @@ class AddNoteCell: UITableViewCell {
         setupAddButton()
         setupStackView()
     }
-
 
     private func setupTextView() {
         textView.font = .systemFont(ofSize: 14, weight: .regular)

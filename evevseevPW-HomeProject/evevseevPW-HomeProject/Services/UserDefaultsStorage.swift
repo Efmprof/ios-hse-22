@@ -1,5 +1,16 @@
 import Foundation
 
+// TODO: find the best way to separate protocols in different files. For now it will stay here
+protocol NotesDataBase {
+    static func getNotes() throws -> [ShortNote]
+    static func saveNotes(_ notes: [ShortNote]) throws
+}
+
+enum NotesDataBaseException: Error {
+    case saveError
+    case getError
+}
+
 class UserDefaultsStorage: NotesDataBase {
     private static let NOTES_STORAGE_KEY = "Notes"
 
