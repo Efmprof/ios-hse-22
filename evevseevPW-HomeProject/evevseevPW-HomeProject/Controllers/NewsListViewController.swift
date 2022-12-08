@@ -1,19 +1,37 @@
 import UIKit
 
 class NewsListViewController: UIViewController {
+    // TODO: implement loading state
     private let tableView = UITableView(frame: .zero, style: .plain)
-    private let newsList: [News] = [News(title: "123", description: "12")]
+    private var newsList: [ArticleViewModel] = []
 
     override func viewDidLoad() {
         setupView()
+        getNews()
     }
+
+    private func getNews() {
+        APINewsProvider().getTopHeadlines { [weak self] result in
+            switch result {
+            case .success(let articles):
+                self?.newsList = articles
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                    // self?.isLoading = false
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+
 
     private func setupView() {
         view.backgroundColor = .systemBackground
 
         setupTableView()
-        setTableViewDelegate()
-        setTableViewCell()
+        setupTableViewDelegate()
+        setupTableViewCell()
     }
 
     private func setupTableView() {
@@ -26,14 +44,15 @@ class NewsListViewController: UIViewController {
         tableView.pinTop(to: view.safeAreaLayoutGuide.topAnchor)
     }
 
-    private func setTableViewCell() {
+    private func setupTableViewCell() {
         tableView.register(NewsCell.self, forCellReuseIdentifier: NewsCell.reuseIdentifier)
     }
 
-    private func setTableViewDelegate() {
+    private func setupTableViewDelegate() {
         tableView.delegate = self
         tableView.dataSource = self
     }
+
 }
 
 extension NewsListViewController: UITableViewDataSource {

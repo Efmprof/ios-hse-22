@@ -7,8 +7,6 @@ class NewsCell: UITableViewCell {
     private let titleLabel = UILabel()
     private let descriptionLabel = UILabel()
 
-    // MARK: - Init
-
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
@@ -25,12 +23,15 @@ class NewsCell: UITableViewCell {
         super.layoutSubviews()
     }
 
-    func configure(_ news: News) {
+    func configure(_ news: ArticleViewModel) {
         titleLabel.text = news.title
         descriptionLabel.text = news.description
 
+        // TODO: get rid of redundant code here and in NewsController
         if let data = news.imageData {
-            newsImageView.image = UIImage(data: data)
+            DispatchQueue.main.async { [weak self] in
+                self?.newsImageView.image = UIImage(data: data)
+            }
         } else if let url = news.imageUrl {
             URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
                         guard let data = data else {
@@ -66,13 +67,13 @@ class NewsCell: UITableViewCell {
     }
 
     private func setupTitleLabel() {
-        titleLabel.text = "Hello"
+        titleLabel.backgroundColor = .red
         titleLabel.font = .systemFont(ofSize: 16, weight: .medium)
         titleLabel.textColor = .label
         titleLabel.numberOfLines = 1
 
         contentView.addSubview(titleLabel)
-        descriptionLabel.setHeight(titleLabel.font.lineHeight)
+        titleLabel.setHeight(titleLabel.font.lineHeight)
 
         titleLabel.pinLeft(to: newsImageView.trailingAnchor, 12)
         titleLabel.pinRight(to: contentView, 12)
@@ -80,14 +81,15 @@ class NewsCell: UITableViewCell {
     }
 
     private func setupDescriptionLabel() {
-        descriptionLabel.text = "World"
+        // TODO: pin text to top edge of view
+        descriptionLabel.backgroundColor = .green
         descriptionLabel.font = .systemFont(ofSize: 14, weight: .regular)
         descriptionLabel.textColor = .secondaryLabel
         descriptionLabel.numberOfLines = 0
 
         contentView.addSubview(descriptionLabel)
         descriptionLabel.pinLeft(to: newsImageView.trailingAnchor, 12)
-        titleLabel.pinRight(to: contentView, 12)
+        descriptionLabel.pinRight(to: contentView, 12)
         descriptionLabel.pinTop(to: titleLabel.bottomAnchor, 12)
 
         descriptionLabel.pinBottom(to: contentView, 12)

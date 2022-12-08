@@ -7,16 +7,18 @@ class NewsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupView()
     }
 
-    func configure(_ news: News) {
+    func configure(_ news: ArticleViewModel) {
+        // TODO: see News Cell
         titleLabel.text = news.title
         descriptionLabel.text = news.description
 
         if let data = news.imageData {
-            imageView.image = UIImage(data: data)
+            DispatchQueue.main.async { [weak self] in
+                self?.imageView.image = UIImage(data: data)
+            }
         } else if let url = news.imageUrl {
             URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
                         guard let data = data else {
@@ -50,8 +52,8 @@ class NewsViewController: UIViewController {
     }
 
     private func setupImageView() {
-        imageView.image = UIImage();
-        imageView.backgroundColor = .secondarySystemBackground
+        imageView.image = UIImage()
+        // imageView.backgroundColor = .secondarySystemBackground
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
 

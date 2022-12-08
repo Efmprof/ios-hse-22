@@ -1,10 +1,9 @@
 import Foundation
 
-class News {
+class ArticleViewModel {
     let title: String
     let description: String
     let imageUrl: URL?
-    // add getters and setters?
     var imageData: Data? = nil
 
     init(title: String, description: String, imageUrl: URL? = nil) {
