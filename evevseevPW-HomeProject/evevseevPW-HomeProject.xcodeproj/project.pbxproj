@@ -15,13 +15,19 @@
 		5FCDAFE728E749D600A94C9A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCDAFE628E749D600A94C9A /* WelcomeViewController.swift */; };
 		5FCDAFED28E78E7900A94C9A /* CALayer+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCDAFEC28E78E7900A94C9A /* CALayer+Shadow.swift */; };
 		5FCDAFEF28E78E8400A94C9A /* UIView+Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCDAFEE28E78E8400A94C9A /* UIView+Pin.swift */; };
+		931850BB2EAD55FE084CFCC6 /* NewsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93185E953EC6C1ECFCD02BB1 /* NewsListViewController.swift */; };
+		931851296B1BC92103AEC8BB /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93185F0827E9D2AF72BF48FD /* ApiService.swift */; };
+		93185197510ECB31F831E793 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9318531945A3E2586F48D1F9 /* NewsCell.swift */; };
 		931851CB404C2FA775CE6453 /* NotesDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931859F71EBB76B33E056673 /* NotesDataBase.swift */; };
 		9318531B58846CDD197F1900 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9318590E2A1E8A35A34BA092 /* NotesViewController.swift */; };
+		9318557FC262164A167631A8 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931858B8E84A6C5CDD219CFD /* NewsViewController.swift */; };
 		931855E63E36587CDFDCF14B /* AddNoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93185C3083B4ED35B9F911EB /* AddNoteCell.swift */; };
 		9318573EAAC481CA064403EE /* ColorPaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931857C71036E6865D23ABDE /* ColorPaletteView.swift */; };
 		93185754B0EBBDE26F819EEF /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93185BF4FBB76EB0E45FE08F /* NoteCell.swift */; };
 		93185B29EEF92AF80B3CB313 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9318588E2BD21E0C130A367F /* UserDefaultsStorage.swift */; };
 		93185D1C50D6B56DEF3B0A45 /* ShortNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9318559539EFC9330EDCD0E7 /* ShortNote.swift */; };
+		93185E43CA9E79F11B8D0C73 /* NewsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9318574CFF7843B341917009 /* NewsRepository.swift */; };
+		93185ED129CCCE60A6150EFA /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93185A04AD4B750D4D6A0E1C /* News.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,13 +41,19 @@
 		5FCDAFE628E749D600A94C9A /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		5FCDAFEC28E78E7900A94C9A /* CALayer+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Shadow.swift"; sourceTree = "<group>"; };
 		5FCDAFEE28E78E8400A94C9A /* UIView+Pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Pin.swift"; sourceTree = "<group>"; };
+		9318531945A3E2586F48D1F9 /* NewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		9318559539EFC9330EDCD0E7 /* ShortNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShortNote.swift; path = Models/ShortNote.swift; sourceTree = "<group>"; };
+		9318574CFF7843B341917009 /* NewsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsRepository.swift; sourceTree = "<group>"; };
 		931857C71036E6865D23ABDE /* ColorPaletteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPaletteView.swift; sourceTree = "<group>"; };
 		9318588E2BD21E0C130A367F /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDefaultsStorage.swift; path = Utils/UserDefaultsStorage.swift; sourceTree = "<group>"; };
+		931858B8E84A6C5CDD219CFD /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		9318590E2A1E8A35A34BA092 /* NotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		931859F71EBB76B33E056673 /* NotesDataBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotesDataBase.swift; path = Utils/NotesDataBase.swift; sourceTree = "<group>"; };
+		93185A04AD4B750D4D6A0E1C /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = News.swift; path = Models/News.swift; sourceTree = "<group>"; };
 		93185BF4FBB76EB0E45FE08F /* NoteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
 		93185C3083B4ED35B9F911EB /* AddNoteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNoteCell.swift; sourceTree = "<group>"; };
+		93185E953EC6C1ECFCD02BB1 /* NewsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListViewController.swift; sourceTree = "<group>"; };
+		93185F0827E9D2AF72BF48FD /* ApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				5FCDAFF728E797A300A94C9A /* Controllers */,
-				5FCDAFEA28E78E5C00A94C9A /* VIews */,
+				5FCDAFEA28E78E5C00A94C9A /* Views */,
 				5FCDAFD228E748DA00A94C9A /* AppDelegate.swift */,
 				5FCDAFD428E748DA00A94C9A /* SceneDelegate.swift */,
 				5FCDAFDB28E748DB00A94C9A /* Assets.xcassets */,
@@ -84,19 +96,23 @@
 				9318559539EFC9330EDCD0E7 /* ShortNote.swift */,
 				931859F71EBB76B33E056673 /* NotesDataBase.swift */,
 				9318588E2BD21E0C130A367F /* UserDefaultsStorage.swift */,
+				93185A04AD4B750D4D6A0E1C /* News.swift */,
+				931858008927A7CB11325C82 /* Repositories */,
+				93185F2DEEBC6BB2B455021A /* Services */,
 			);
 			path = "evevseevPW-HomeProject";
 			sourceTree = "<group>";
 		};
-		5FCDAFEA28E78E5C00A94C9A /* VIews */ = {
+		5FCDAFEA28E78E5C00A94C9A /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				5FCDAFEB28E78E6600A94C9A /* Extensions */,
 				931857C71036E6865D23ABDE /* ColorPaletteView.swift */,
 				93185BF4FBB76EB0E45FE08F /* NoteCell.swift */,
 				93185C3083B4ED35B9F911EB /* AddNoteCell.swift */,
+				9318531945A3E2586F48D1F9 /* NewsCell.swift */,
 			);
-			path = VIews;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		5FCDAFEB28E78E6600A94C9A /* Extensions */ = {
@@ -114,8 +130,26 @@
 			children = (
 				5FCDAFE628E749D600A94C9A /* WelcomeViewController.swift */,
 				9318590E2A1E8A35A34BA092 /* NotesViewController.swift */,
+				93185E953EC6C1ECFCD02BB1 /* NewsListViewController.swift */,
+				931858B8E84A6C5CDD219CFD /* NewsViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		931858008927A7CB11325C82 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				9318574CFF7843B341917009 /* NewsRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		93185F2DEEBC6BB2B455021A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				93185F0827E9D2AF72BF48FD /* ApiService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +235,12 @@
 				931855E63E36587CDFDCF14B /* AddNoteCell.swift in Sources */,
 				931851CB404C2FA775CE6453 /* NotesDataBase.swift in Sources */,
 				93185B29EEF92AF80B3CB313 /* UserDefaultsStorage.swift in Sources */,
+				931850BB2EAD55FE084CFCC6 /* NewsListViewController.swift in Sources */,
+				93185ED129CCCE60A6150EFA /* News.swift in Sources */,
+				93185197510ECB31F831E793 /* NewsCell.swift in Sources */,
+				93185E43CA9E79F11B8D0C73 /* NewsRepository.swift in Sources */,
+				931851296B1BC92103AEC8BB /* ApiService.swift in Sources */,
+				9318557FC262164A167631A8 /* NewsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

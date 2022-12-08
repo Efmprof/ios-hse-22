@@ -4,7 +4,7 @@ class NotesViewController: UIViewController {
     private let tableView = UITableView(frame: .zero, style: .insetGrouped)
 
     // TODO: Make proper error handling
-    private var notes = try! UserDefaultsStorage.getNotes()
+    private var notesList = try! UserDefaultsStorage.getNotes()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,11 +45,11 @@ class NotesViewController: UIViewController {
     }
 
     private func handleDelete(indexPath: IndexPath) {
-        notes.remove(at: indexPath.row)
+        notesList.remove(at: indexPath.row)
         tableView.reloadData()
 
         // TODO: Make proper error handling
-        try! UserDefaultsStorage.saveNotes(notes)
+        try! UserDefaultsStorage.saveNotes(notesList)
     }
 
     @objc
@@ -68,7 +68,7 @@ extension NotesViewController: UITableViewDataSource {
         case 0:
             return 1
         default:
-            return notes.count
+            return notesList.count
         }
     }
 
@@ -80,7 +80,7 @@ extension NotesViewController: UITableViewDataSource {
                 return addNewCell
             }
         default:
-            let note = notes[indexPath.row]
+            let note = notesList[indexPath.row]
             if let noteCell = tableView.dequeueReusableCell(withIdentifier: NoteCell.reuseIdentifier, for: indexPath) as? NoteCell {
                 noteCell.configure(note)
                 return noteCell;
@@ -114,10 +114,10 @@ extension NotesViewController: UITableViewDelegate {
 
 extension NotesViewController: AddNoteDelegate {
     func newNoteAdded(note: ShortNote) {
-        notes.insert(note, at: 0)
+        notesList.insert(note, at: 0)
         tableView.reloadData()
 
         // TODO: Make proper error handling
-        try! UserDefaultsStorage.saveNotes(notes)
+        try! UserDefaultsStorage.saveNotes(notesList)
     }
 }
