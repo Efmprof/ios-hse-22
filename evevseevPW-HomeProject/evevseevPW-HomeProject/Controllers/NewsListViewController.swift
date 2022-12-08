@@ -1,9 +1,11 @@
 import UIKit
 
+// TODO: remove image flickering on update
 class NewsListViewController: UIViewController {
     // TODO: implement loading state
     private let tableView = UITableView(frame: .zero, style: .plain)
     private var newsList: [ArticleViewModel] = []
+    private var isLoading = false
 
     override func viewDidLoad() {
         setupView()
@@ -11,13 +13,14 @@ class NewsListViewController: UIViewController {
     }
 
     private func getNews() {
+        isLoading = true
         NewsApiCom().getTopHeadlines { [weak self] result in
             switch result {
             case .success(let articles):
                 self?.newsList = articles
                 DispatchQueue.main.async {
+                    self?.isLoading = false
                     self?.tableView.reloadData()
-                    // self?.isLoading = false
                 }
             case .failure(let error):
                 print(error)
@@ -25,11 +28,21 @@ class NewsListViewController: UIViewController {
         }
     }
 
+    @objc
+    private func goBack() {
+        navigationController?.popViewController(animated: true)
+    }
+
+    @objc
+    private func refreshNews() {
+        getNews()
+    }
 
     private func setupView() {
         view.backgroundColor = .systemBackground
 
         setupTableView()
+        setupNavbar()
         setupTableViewDelegate()
         setupTableViewCell()
     }
@@ -44,6 +57,23 @@ class NewsListViewController: UIViewController {
         tableView.pinTop(to: view.safeAreaLayoutGuide.topAnchor)
     }
 
+    private func setupNavbar() {
+        navigationItem.title = "News"
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+                image: UIImage(systemName: "chevron.left"),
+                style: .plain,
+                target: self,
+                action: #selector(goBack))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+                image: UIImage(systemName: "arrow.triangle.2.circlepath"),
+                style: .plain,
+                target: self,
+                action: #selector(refreshNews))
+
+        navigationItem.leftBarButtonItem?.tintColor = .label
+        navigationItem.rightBarButtonItem?.tintColor = .label
+    }
+
     private func setupTableViewCell() {
         tableView.register(NewsCell.self, forCellReuseIdentifier: NewsCell.reuseIdentifier)
     }
@@ -52,20 +82,19 @@ class NewsListViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
-
 }
 
 extension NewsListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (false) {
-
+        if (isLoading) {
+            return 0
         } else {
             return newsList.count
         }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if (false) {
+        if (isLoading) {
 
         } else {
             let news = newsList[indexPath.row]
@@ -80,7 +109,7 @@ extension NewsListViewController: UITableViewDataSource {
 
 extension NewsListViewController: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if (true) {
+        if (!isLoading) {
             let newsVC = NewsViewController();
             newsVC.configure(newsList[indexPath.row])
             navigationController?.pushViewController(newsVC, animated: true)

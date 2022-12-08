@@ -35,7 +35,7 @@ class NewsViewController: UIViewController {
 
     @objc
     func goBack() {
-        // TODO: implement
+        navigationController?.popViewController(animated: true)
     }
 
     private func setupView() {
@@ -48,7 +48,13 @@ class NewsViewController: UIViewController {
     }
 
     private func setupNavbar() {
-        // TODO: implement
+        navigationItem.title = "News"
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+                image: UIImage(systemName: "chevron.left"),
+                style: .plain,
+                target: self,
+                action: #selector(goBack))
+        navigationItem.leftBarButtonItem?.tintColor = .label
     }
 
     private func setupImageView() {
